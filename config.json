@@ -1,0 +1,71 @@
+{
+  "name": "Discord - Matrix",
+  "theme": {
+    "colors": {
+      "primary": {
+        "050": "#FEECF0",
+        "100": "#FCC5D1",
+        "200": "#FA9EB2",
+        "300": "#F87793",
+        "400": "#F65174",
+        "500": "#F42A56",
+        "600": "#E90C3C",
+        "700": "#AE092D",
+        "800": "#74061E",
+        "900": "#4E0414"
+      },
+      "neutrals": {
+        "000": "#FFFFFF",
+        "050": "#F4F6F4",
+        "100": "#DEE3DE",
+        "200": "#C8D0C8",
+        "300": "#A7B4A7",
+        "400": "#5E6E5E",
+        "500": "#4B584B",
+        "600": "#384238",
+        "700": "#2F372F",
+        "800": "#262C26",
+        "900": "#131613",
+        "999": "#0A0B0A"
+      }
+    }
+  },
+  "stickers": [
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_1.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_2.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_3.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_4.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_5.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_6.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_7.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_8.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_9.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_10.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_11.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_12.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_13.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_14.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_15.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_16.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_17.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_18.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_19.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_20.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_21.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_22.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_23.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_24.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_25.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_26.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_27.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_28.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_29.png",
+    "https://www.alura.com.br/imersao-react-4/assets/figurinhas/Figurinha_30.png",
+    "http://2.bp.blogspot.com/-d21tffsTIQo/U_H9QjC69gI/AAAAAAAAKqM/wnvOyUr6a_I/s1600/Pikachu%2B2.gif",
+    "https://media1.giphy.com/media/BdghqxNFV4efm/200.gif",
+    "https://c.tenor.com/TKpmh4WFEsAAAAAC/alura-gaveta-filmes.gif",
+    "https://i.pinimg.com/originals/0b/1c/23/0b1c2307c83e1ebdeed72e41b9a058ad.gif",
+    "https://c.tenor.com/VylWt5lyjBoAAAAC/omg-yes.gif",
+    "https://i.pinimg.com/originals/96/34/c5/9634c520c9a3cd4e7f23190bb2c96500.gif"
+  ]
+}
