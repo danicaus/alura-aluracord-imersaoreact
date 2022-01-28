@@ -1,5 +1,5 @@
 {
-  "name": "Discord - AluraMatrix",
+  "name": "Discord - Alura memes",
   "theme": {
     "colors": {
       "primary": {
@@ -67,5 +67,56 @@
     "https://i.pinimg.com/originals/0b/1c/23/0b1c2307c83e1ebdeed72e41b9a058ad.gif",
     "https://c.tenor.com/VylWt5lyjBoAAAAC/omg-yes.gif",
     "https://i.pinimg.com/originals/96/34/c5/9634c520c9a3cd4e7f23190bb2c96500.gif"
-  ]
+  ],
+  "formMemes": {
+    "status": {
+      "welcome": {
+        "image": "https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F469aa104-7462-11e7-93f8-c74b9ea57adf.jpg?crop=2667%2C1500%2C0%2C0&resize=1180",
+        "alt": "Richard Dawkins, criador do termo meme",
+        "message": "Digite um username do Github para entrar"
+      },
+      "typing": {
+        "image": "https://media.giphy.com/media/NOjpziLgWM7cs/giphy.gif",
+        "alt": "Gato de peruca rosa e headset digitando em um teclado",
+        "message": "Digitando..."
+      },
+      "notFound": {
+        "image": "https://media.giphy.com/media/rI9O6UXkCjvTG/giphy.gif",
+        "alt": "GIF de personagem do filme Guardiões da Galáxia questionando quem",
+        "message": "Username não encontrado"
+      }
+    },
+    "result": {
+      "noCommits": {
+        "image": "https://media.giphy.com/media/g01ZnwAUvutuK8GIQn/giphy.gif",
+        "alt": "GIF John Travolta confuso",
+        "message": "Esse user ainda nunca foi visto no Github..."
+      },
+      "longTimeNoSee": {
+        "image": "https://www.criatives.com.br/wp-content/uploads/2020/01/Atriz-de-Titanic-02-600x355.jpeg",
+        "alt": "Rose do Titanic idosa",
+        "message": "Já faz 84 anos... do último commit."
+      },
+      "oldUser": {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwrVCShmXFuqPXS1KdZ3_coHie4nkn1np5LWC2N9HUHnWMnUhRiuLRjHSDgv5gYjrx8dI&usqp=CAU",
+        "alt": "Desenho de um homem de bigode com cartola, terno e monóculo, representando um meme antigo",
+        "message": "Na época que essa conta foi criada, o Github ainda era mato..."
+      },
+      "polyglot": {
+        "image": "https://media.giphy.com/media/dZX3AduGrY3uJ7qCsx/giphy.gif",
+        "alt": "Pessoa mergulhando no mar azul escuro usando óculos de mergulho com respirador",
+        "message": "Um verdadeiro Dev em <T>"
+      },
+      "popStar": {
+        "image": "https://c.tenor.com/2nQ9LSXvGX8AAAAM/xuxa.gif",
+        "alt": "Mulher abrindo porta de entrada de sua casa",
+        "message": "Quem é essa gente toda aqui?"
+      },
+      "normal": {
+        "image": "https://i.imgflip.com/3q5zzc.png",
+        "alt": "Baby Yoda com óculos de grau",
+        "message": "Que a Força esteja com você, jovem user..."
+      }
+    }
+  }
 }
