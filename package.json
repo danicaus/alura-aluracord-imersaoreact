@@ -14,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@crello/react-lottie": "^0.0.11",
     "@skynexui/components": "^1.23.7",
     "next": "^12.0.8",
     "react": "^17.0.2",
