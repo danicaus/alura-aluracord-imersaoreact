@@ -33,7 +33,6 @@ function HomePage() {
   const newPage = useRouter();
 
   function chooseUserMeme(userSituation) {
-    console.log("userSituation: ", userSituation)
     if (!userSituation.userHasCommits) {
       setUsernameRequestStatus(usernameStates.DONE.noCommits) //caus
     } else if (userSituation.accountCreatedOverTenYears) {
@@ -142,7 +141,7 @@ function HomePage() {
 
     const newTimeout = setTimeout(async () => {
       checkIfUserExists(value);
-    }, 2000);
+    }, 1000);
 
     setTimer(newTimeout);
   }
@@ -264,6 +263,7 @@ function HomePage() {
                 styleSheet={{
                   fontWeight: 600,
                 }}
+                disabled={!showResults}
               />
             </Box>
             {/* Formulário */}
@@ -317,15 +317,15 @@ function HomePage() {
                 borderTop: "1px solid",
                 borderTopColor: localData.theme.colors.neutrals[800],
                 transition: "all 1s .1s",
-                position: showResults === true ? 'static' : 'absolute',
-                opacity: showResults === true ? '1' : '0',
-                transform: showResults === true ? 'translateY(0)' : 'translateY(-100px)'
+                position: showResults ? 'static' : 'absolute',
+                opacity: showResults ? '1' : '0',
+                transform: showResults ? 'translateY(0)' : 'translateY(-100px)'
               }}
             >
               <Box
                 styleSheet={{
-                  position: showResults === true ? 'static' : 'absolute',
-                  opacity: showResults === true ? '1' : '0',
+                  position: showResults ? 'static' : 'absolute',
+                  opacity: showResults ? '1' : '0',
                   paddingTop: "16px",
                   paddingBottom: "8px",
                 }}
@@ -334,7 +334,7 @@ function HomePage() {
               </Box>
               <Box
                 styleSheet={{
-                  position: showResults === true ? 'static' : 'absolute',
+                  position: showResults ? 'static' : 'absolute',
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between",
@@ -347,8 +347,8 @@ function HomePage() {
                 {/* Imagem do user */}
                 <Box
                   styleSheet={{
-                    position: showResults === true ? 'static' : 'absolute',
-                    opacity: showResults === true ? '1' : '0',
+                    position: showResults ? 'static' : 'absolute',
+                    opacity: showResults ? '1' : '0',
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
@@ -385,8 +385,8 @@ function HomePage() {
 
                 <Box
                   styleSheet={{
-                    position: showResults === true ? 'static' : 'absolute',
-                    opacity: showResults === true ? '1' : '0',
+                    position: showResults ? 'static' : 'absolute',
+                    opacity: showResults ? '1' : '0',
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "flex-start",
@@ -411,7 +411,7 @@ function HomePage() {
 
               <Box
                 styleSheet={{
-                  position: showResults === true ? 'static' : 'absolute',
+                  position: showResults ? 'static' : 'absolute',
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
