@@ -1,25 +1,59 @@
 import React from "react";
-import { Box, Text, TextField, Image, Button, Icon } from "@skynexui/components";
-import localData from "../config.json";
-import Title from "../components/Title";
-import ExitButton from "../components/ExitButton";
+import { Box, TextField, Button } from "@skynexui/components";
+import { createClient } from '@supabase/supabase-js';
 
-export default function ChatPage() {
+import localData from "../config.json";
+import Header from "../src/components/Header";
+import MessageList from "../src/components/MessageList";
+
+export function getServerSideProps() {
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_ANON_PUBLIC
+
+  return {
+    props: {
+      supabaseUrl,
+      supabaseKey
+    }
+  };
+}
+
+export default function ChatPage({ supabaseUrl, supabaseKey }) {
   const [message, setMessage] = React.useState([]);
   const [messageList, setMessageList] = React.useState([]);
 
+  const supabaseClient = createClient(supabaseUrl, supabaseKey)
+
   function sendMessage(message) {
     const messageData = {
-      id: Date.now(),
-      message,
-      user: "danicaus",
+      texto: message,
+      de: localStorage.getItem('user'),
     };
-    setMessageList([
-      messageData,
-      ...messageList, 
-    ]);
+    postMessageToSupabase(messageData)
     setMessage('')
   }
+
+  function postMessageToSupabase(messageData) {
+    supabaseClient
+      .from('messageList')
+      .insert([messageData])
+      .then(({ data }) => {
+        setMessageList([
+          data[0],
+          ...messageList,
+        ])
+      })
+  }
+
+  React.useEffect(() => {
+   supabaseClient
+      .from('messageList')
+      .select('*')
+      .order('created_at', { ascending: false })
+      .then(({ data }) => {
+        setMessageList(data)
+      })
+  }, [])
 
   return (
     <Box
@@ -61,7 +95,11 @@ export default function ChatPage() {
             padding: "16px",
           }}
         >
-          <MessageList list={messageList} setMessageList={setMessageList} />
+          <MessageList 
+            list={messageList} 
+            setMessageList={setMessageList} 
+            supabaseClient={supabaseClient}
+          />
           <Box
             as="form"
             styleSheet={{
@@ -114,110 +152,4 @@ export default function ChatPage() {
       </Box>
     </Box>
   );
-}
-
-function Header() {
-  return (
-    <>
-      <Box
-        styleSheet={{
-          width: "100%",
-          marginBottom: "16px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <Title variant="heading5">Chat</Title>
-        <Button
-          variant="tertiary"
-          colorVariant="neutral"
-          label="Logout"
-          href="/"
-        />
-      </Box>
-    </>
-  );
-}
-
-function MessageList({ list, setMessageList }) {
-  function removeMessage(messageId) {
-    const filterMessageClicked = list.filter( message => {
-      return message.id != messageId
-    })
-    setMessageList(filterMessageClicked)
-  }
-  
-  return (
-    <Box
-    tag="ul"
-    styleSheet={{
-      overflow: "scroll",
-      display: "flex",
-      flexDirection: "column-reverse",
-      flex: 1,
-      color: localData.theme.colors.neutrals["000"],
-      marginBottom: "16px",
-    }}
-    >
-      { list.map((message) => {
-        return (
-          <Text
-            key={message.id}
-            tag="li"
-            styleSheet={{
-              borderRadius: "5px",
-              padding: "6px",
-              marginBottom: "12px",
-              width: 'fit-content',
-              hover: {
-                backgroundColor: localData.theme.colors.neutrals[700],
-              },
-            }}
-          >
-            <Box
-              styleSheet={{
-                display: "flex",
-                justifyContent: 'space-between',
-                alignItems: 'center'
-              }}
-            >
-            <Box
-              styleSheet={{
-                marginBottom: "8px",
-              }}
-            >
-              <Image
-                styleSheet={{
-                  width: "20px",
-                  height: "20px",
-                  borderRadius: "50%",
-                  display: "inline-block",
-                  marginRight: "8px",
-                }}
-                src={`https://github.com/${message.user}.png`}
-              />
-              <Text tag="strong">{message.user}</Text>
-              <Text
-                styleSheet={{
-                  fontSize: "10px",
-                  marginLeft: "8px",
-                  color: localData.theme.colors.neutrals[300],
-                }}
-                tag="span"
-              >
-                {new Date().toLocaleDateString()}
-              </Text>
-            </Box>
-              <ExitButton
-                removeMessage={removeMessage}
-                messageId={message.id}
-              />
-            </Box>
-            {message.message}
-          </Text>
-        )
-      })}
-    </Box>
-    );
 }

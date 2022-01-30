@@ -1,6 +1,7 @@
 import React from "react";
 import { Icon } from "@skynexui/components";
-import localData from "../config.json";
+
+import localData from "../../config.json";
 
 export default function ExitButton({removeMessage, messageId}) {
   return (

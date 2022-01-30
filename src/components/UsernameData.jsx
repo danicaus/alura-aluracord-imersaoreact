@@ -1,7 +1,7 @@
 import React from "react";
 import { Text } from "@skynexui/components";
 
-import localData from "../config.json";
+import localData from "../../config.json";
 
 function UsernameData({ children }) {
   return (

@@ -3,8 +3,9 @@ import { Box, Button, Text, TextField, Image } from "@skynexui/components";
 import { useRouter } from "next/router";
 
 import localData from "../config.json";
-import Title from "../components/Title";
-import UsernameData from "../components/UsernameData";
+import Title from "../src/components/Title";
+import UsernameData from "../src/components/UsernameData";
+import handleDateFormat from "../src/utils/handleDateFormat";
 
 const usernameStates = {
   DEFAULT: localData.formMemes.status.welcome,
@@ -62,23 +63,9 @@ function HomePage() {
     chooseUserMeme(userSituation);
   }
 
-  function handleDateFormat(date) {
-    const removesUTC = date.split(/[.Z]/);
-    const unformattedDate = new Date(removesUTC[0])
-    const options = {
-      hour: 'numeric', 
-      minute: 'numeric',
-      day: 'numeric',
-      month: 'numeric',
-      year: 'numeric',
-    }
-    const formattedDate = new Intl.DateTimeFormat('pt-BR', options).format(unformattedDate)
-    return formattedDate
-  }
-
   function getCommitsData(tempStarsData, login) {
     fetch(`https://api.github.com/search/commits?q=author:${login}&sort=author-date`)
-      .then(res => res.json())
+      .then(async res => await res.json())
       .then((data) => {
         const tempData = {
           ...tempStarsData,
@@ -92,7 +79,7 @@ function HomePage() {
 
   function getStarsReceived(tempUserData, login) {
     fetch(`https://api.github.com/users/${login}/repos`)
-      .then(res => res.json())
+      .then(async (res) => await res.json())
       .then((data) => {
         const totalStars = data.reduce((prev, curr) => {
           return curr.stargazers_count + prev
@@ -117,12 +104,12 @@ function HomePage() {
   
   function checkIfUserExists(value) {
     fetch(`https://api.github.com/users/${value}`)
-      .then((res) => {
+      .then(async (res) => {
         if(res.status === 404) {
           setUsernameRequestStatus(usernameStates.ERROR);
           return
         } else {
-          return res.json()
+          return await res.json()
         }
       })
       .then((data) => {
@@ -161,6 +148,7 @@ function HomePage() {
 
   function handleFormSubmit(event) {
     event.preventDefault();
+    localStorage.setItem('user', username)
     newPage.push("chat");
   }
 

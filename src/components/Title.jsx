@@ -1,5 +1,5 @@
 import React from 'react';
-import stylesConfig from '../config.json';
+import stylesConfig from '../../config.json';
 
 function Title({variant, children}) {
   const Tag = variant || 'h1';
