@@ -69,6 +69,8 @@ Incluído um botão para excluir a mensagem. Adaptei o CSS para que ele ficasse 
 ### <ins>**Formato de data**</ins>
 Adicionado o horário da mensagem enviada. O bloco passado na Imersão só enviada a data.
 
+Além disso, como o Supabase grava o horário do post da mensagem sem considerar o fuso horário do Brasil, fiz com que o horário das mensagens obedecesse o horário do Brasil.
+
 ### <ins>**Página de erro**</ins>
 Foi criada uma página de 404, também com um meme feliz.
 
@@ -92,6 +94,8 @@ Valeu, [Dev Soutinho!](https://github.com/omariosouto) ❤
 ### <ins>**Supabase**</ins>
 
 O [Supabase](https://supabase.com/) foi usado como um serviço de backend. Ele pode ser usado de várias formas, mas neste projeto foi usado como um database para armazenar e alterar as mensagens enviadas.
+
+Para atualização do chat em tempo real, foi usada a feature de [*subscribe*](https://supabase.com/docs/reference/javascript/subscribe).
 
 Extremamente fácil de criar, administrar e usar, além de ser de graça!
 

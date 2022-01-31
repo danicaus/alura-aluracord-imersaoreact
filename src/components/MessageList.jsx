@@ -6,20 +6,7 @@ import ExitButton from "./ExitButton";
 import handleDateFormat from "../utils/handleDateFormat";
 import localData from "../../config.json";
 
-
-function MessageList({ list, setMessageList, supabaseClient }) {
-  function removeMessage(messageId) {
-    supabaseClient
-    .from('messageList')
-    .delete()
-    .match( { id: messageId })
-    .then(({ data}) => {
-        const listWithoutMessageClicked = list.filter( message => {
-          return message.id != data[0].id
-        })
-        setMessageList(listWithoutMessageClicked)
-      })
-  }
+function MessageList({ list, removeMessage }) {
   
   return (
     <Box
@@ -87,7 +74,19 @@ function MessageList({ list, setMessageList, supabaseClient }) {
                 messageId={message.id}
               />
             </Box>
-            {message.texto}
+            {message.texto.startsWith(':sticker:')
+              ? (
+                <Image 
+                  src={message.texto.replace(':sticker:', '')}
+                  styleSheet={{
+                    height: '100px',
+                  }}
+                />
+              )
+              : (
+                message.texto
+              )
+            }
           </Text>
         )
       })}
