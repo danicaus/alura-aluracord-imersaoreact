@@ -14,6 +14,7 @@ export default function ExitButton({removeMessage, messageId}) {
       </button>
       <style jsx>{`
         .exitButton {
+          display: none;
           color: ${localData.theme.colors.primary['400']};
           font-size: 14px;
           font-weight: 600;
