@@ -161,7 +161,7 @@ export default function ChatPage({ supabaseUrl, supabaseKey }) {
             }}
             onSubmit={(event) => {
               event.preventDefault();
-              sendMessage(message);
+              message.length > 5 && sendMessage(message);
             }}
           >
             <TextField
@@ -180,7 +180,7 @@ export default function ChatPage({ supabaseUrl, supabaseKey }) {
               value={message}
               onChange={(event) => setMessage(event.target.value)}
               onKeyPress={(event) => {
-                if (event.key == "Enter") {
+                if (event.key == "Enter" && event.target.value.length > 5) {
                   event.preventDefault();
                   sendMessage(event.target.value);
                 }
@@ -200,6 +200,7 @@ export default function ChatPage({ supabaseUrl, supabaseKey }) {
               />
               <Button
                 iconName="ArrowAltCircleRight"
+                disabled={!(message.length > 5)}
                 type="submit"
                 buttonColors={{
                   contrastColor: localData.theme.colors.neutrals["050"],
