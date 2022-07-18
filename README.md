@@ -27,40 +27,18 @@ Inspirada na ideia dos memes, trouxe alguns dados do Github:
 - Número de commits
 - Data do último commit
 
-Com isso, essas informações o app seleciona um meme:
+Com isso, essas informações o app seleciona um meme.
 
-- Conta sem commits:
-
-<img src="https://media.giphy.com/media/g01ZnwAUvutuK8GIQn/giphy.gif" width="300" alt="GIF John Travolta confuso" style="margin-left:40px">
-
-- Conta criada há mais de 10 anos:
-
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwrVCShmXFuqPXS1KdZ3_coHie4nkn1np5LWC2N9HUHnWMnUhRiuLRjHSDgv5gYjrx8dI&usqp=CAU" width="300" alt="Desenho de um homem de bigode com cartola, terno e monóculo, representando um meme antigo" style="margin-left:40px">
-
-- Sem commits há mais de 3 meses:
-
-<img src="https://www.criatives.com.br/wp-content/uploads/2020/01/Atriz-de-Titanic-02-600x355.jpeg" width="300" alt="Rose do Titanic idosa" style="margin-left:40px">
-
-- Mais de 100 seguidores:
-
-<img src="https://c.tenor.com/2nQ9LSXvGX8AAAAM/xuxa.gif" width="300" alt="Mulher abrindo porta de entrada de sua casa" style="margin-left:40px">
-
-- Não cumpre nenhum dos outros critérios:  
-
-<img src="https://i.imgflip.com/3q5zzc.png" width="300" alt="Baby Yoda com óculos de grau" style="margin-left:40px">
-
-Por fim, adaptei uma aplicação que uso no meu perfil para mostrar as linguagens mais usadas pelo usuário:
+Também adaptei uma aplicação que uso no meu perfil para mostrar as linguagens mais usadas pelo usuário:
 
 <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=danicaus&layout=compact&langs_count=7&theme=omni"/>
 
 Link do repositório da aplicação: https://github.com/anuraghazra/github-readme-stats
 
+Obrigada pelo [vídeo](https://youtu.be/TsaLQAetPLU), [Rafa Ballerini!](https://github.com/rafaballerini)
 
 ### <ins>**Gravar nome do user no localStorage**</ins>
 Na aula o login do usuário é implementado à url, no entanto usei o armazenamento em localStorage.
-
-### <ins>**serverSideProps (NextJS)**</ins>
-Aplicada para adicionar uma camada de segurança no uso das chaves do Supabase. A Imersão deixa a chave e a url dentro do código, permitindo com que sejam lidas pelo browser.
 
 ### <ins>**Botão de enviar**</ins>
 Adicionado um botão para enviar mensagem no chat, que executa a mesma função que a tecla "Enter", ensinada na Imersão.
@@ -82,8 +60,6 @@ Foi criada uma página de 404, também com um meme feliz.
 Aplicação criada com [NextJS](https://nextjs.org/) com [setup manual](https://nextjs.org/docs/getting-started#manual-setup).
 
 Aplicamos o [next/router](https://nextjs.org/docs/api-reference/next/router) para redirecionamento de página entre o login e a página de chat. Isso permite com que a transição entre as páginas seja feita do lado do browser, melhorando a performance de carregamento da aplicação.
-
-Usei a função [ServerSideProps](https://nextjs.org/docs/api-reference/data-fetching/get-server-side-props) para exportar a chave e a url de requisição para o Supabase. Com isso, o Next pode se comunicar com o Node e obter as chaves de ambiente e passar como props para a página de chat, e essa página pode se comunicar com o Supabase sem expor as variáveis no browser.
 
 ### <ins>**@skynexui**</ins>
 
