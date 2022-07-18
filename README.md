@@ -1,10 +1,12 @@
-# Discord Alura Memes
+<h1 align="center">
+  Discord Alura Memes
+</h1>
 
-Projeto criado na Imersão React da Alura. 
-
-A Imersão React desenvolveu um projeto de sala de chat para troca de mensagens entre usuários. Contém uma tela de login, que se comunica com a api do Github para trazer a foto e o nome do usuário.
+Aplicação de uma sala de chat para troca de mensagens entre usuários. Contém uma tela de login, que se comunica com a api do Github para trazer a foto e o nome do usuário.
 
 Após entrar na sala de chat, o usuário consegue enviar mensagens, que são armazenadas em um banco de dados. No caso desse projeto, foi utilizado o Supabase para essa finalidade.
+
+Projeto criado na Imersão React da Alura em Janeiro de 2022.
 
 ---
 
